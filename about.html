@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Skill Up - Our Mission, Team & Vision</title>
+   <link rel="icon" type="image/png" href="images/ChatGPT Image May 5, 2025, 12_54_09 AM.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    #nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    #nav-links li a {
+      color: #333;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    #nav-links li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #6d28d9;
+      transition: width 0.3s ease;
+    }
+
+    #nav-links li a:hover:after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .page-header {
+      position: relative;
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      background: linear-gradient(135deg, #6d28d9, #4f46e5);
+      color: white;
+      overflow: hidden;
+    }
+
+    .page-header:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSIxMDAiPgo8cGF0aCBkPSJNMjggNjZMMCA1MEwwIDE2TDI4IDBMNTYgMTZMNTYgNTBMMjggNjZMMjggMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjIiPjwvcGF0aD4KPHBhdGggZD0iTTI4IDBMMjggMzRMNTYgNTBMNTYgMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+Cjwvc3ZnPg==');
+      opacity: 0.1;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 4px;
+      bottom: -10px;
+      left: 20%;
+      background: #6d28d9;
+      border-radius: 2px;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #e5e7eb;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .timeline-container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -13px;
+      background-color: white;
+      border: 4px solid #6d28d9;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    .right::after {
+      left: -12px;
+    }
+
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-social {
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .team-card:hover .team-social {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .value-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-100%);
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    .mobile-nav.active {
+      transform: translateY(0);
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .mobile-nav li {
+      margin: 1.5rem 0;
+    }
+
+    .mobile-nav a {
+      font-size: 1.5rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #6d28d9;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .footer-link {
+      transition: all 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: #6d28d9;
+      transform: translateX(5px);
+    }
+
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      color: #6d28d9;
+    }
+
+    @media (max-width: 768px) {
+      #nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .timeline-container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .left::after, .right::after {
+        left: 18px;
+      }
+
+      .right {
+        left: 0%;
+      }
+    }
+
+    .animate-element {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-element.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+     html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6b46c1;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #553c9a;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="close-menu" id="close-menu">
+      <i class="fas fa-times"></i>
+    </div>
+    <ul>
+      <li><a href="index.html" class="hover:text-purple-600 transition-colors">Home</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">About</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">How It Works</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">For Teachers</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">For Students</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTUwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMC41IDEwQzE0LjcgMTAgMTAgMTQuNyAxMCAyMC41QzEwIDI2LjMgMTQuNyAzMSAyMC41IDMxQzI2LjMgMzEgMzEgMjYuMyAzMSAyMC41QzMxIDE0LjcgMjYuMyAxMCAyMC41IDEwWk0yMC41IDI4QzE2LjQgMjggMTMgMjQuNiAxMyAyMC41QzEzIDE2LjQgMTYuNCAxMyAyMC41IDEzQzI0LjYgMTMgMjggMTYuNCAyOCAyMC41QzI4IDI0LjYgMjQuNiAyOCAyMC41IDI4WiIgZmlsbD0iIzZEMjhEOSIvPgogIDxwYXRoIGQ9Ik0yMC41IDE2QzE4LjYgMTYgMTcgMTcuNiAxNyAxOS41QzE3IDIxLjQgMTguNiAyMyAyMC41IDIzQzIyLjQgMjMgMjQgMjEuNCAyNCAyMC41QzI0IDE5LjYgMjMuNyAxOC44IDIzLjEgMTguMUMyMi41IDE3LjQgMjEuNSAxNyAyMC41IDE3VjE2WiIgZmlsbD0iIzZEMjhEOSIvPgogIDxwYXRoIGQ9Ik00MS4yIDIzLjVWMTYuNUg0My4xVjIzLjVINDEuMloiIGZpbGw9IiMzMzMiLz4KICA8cGF0aCBkPSJNNDUuNyAyMy41VjE2LjVINDcuNlYxNy41QzQ4IDE2LjkgNDguNyAxNi40IDQ5LjYgMTYuNEM1MC41IDE2LjQgNTEuMiAxNi44IDUxLjYgMTcuNEM1Mi4xIDE2LjggNTIuOCAxNi40IDUzLjcgMTYuNEM1NS4yIDE2LjQgNTYuMiAxNy40IDU2LjIgMTkuMVYyMy41SDU0LjNWMTkuNUM1NC4zIDE4LjYgNTMuOCAxOC4xIDUzLjEgMTguMUM1Mi40IDE4LjEgNTEuOSAxOC42IDUxLjkgMTkuNVYyMy41SDUwVjE5LjVDNTAgMTguNiA0OS41IDE4LjEgNDguOCAxOC4xQzQ4LjEgMTguMSA0Ny42IDE4LjYgNDcuNiAxOS41VjIzLjVINDUuN1oiIGZpbGw9IiMzMzMiLz4KICA8cGF0aCBkPSJNNjMuNCAyMy41TDYwLjkgMjAuNVY2My40SDU5VjE2LjVINjAuOUw2My40IDE5LjVMNjUuOSAxNi41SDY3LjhWMjMuNUg2NS45TDYzLjQgMjAuNVYyMy41WiIgZmlsbD0iIzMzMyIvPgogIDxwYXRoIGQ9Ik03NC4zIDIzLjdDNzIuMSAyMy43IDcwLjQgMjIgNzAuNCAxOS45QzcwLjQgMTcuOCA3Mi4xIDE2LjIgNzQuMyAxNi4yQzc2LjUgMTYuMiA3OC4yIDE3LjkgNzguMiAxOS45Qzc4LjIgMjIgNzYuNSAyMy43IDc0LjMgMjMuN1pNNzQuMyAyMkM3NS41IDIyIDc2LjMgMjEuMSA3Ni4zIDE5LjlDNzYuMyAxOC43IDc1LjQgMTcuOCA3NC4zIDE3LjhDNzMuMSAxNy44IDcyLjMgMTguNyA3Mi4zIDE5LjlDNzIuMyAyMS4xIDczLjEgMjIgNzQuMyAyMloiIGZpbGw9IiMzMzMiLz4KICA8cGF0aCBkPSJNODUuMyAyMy41TDgzLjYgMjEuM0w4MS45IDIzLjVIODQuOEw3OS44IDE2LjVIODEuN0w4My40IDE4LjdMODUuMSAxNi41SDgyLjJMODcuMiAyMy41SDg1LjNaIiBmaWxsPSIjMzMzIi8+CiAgPHBhdGggZD0iTTk0LjMgMjMuN0M5Mi4xIDIzLjcgOTAuNCAyMiA5MC40IDE5LjlDOTAuNCAxNy44IDkyLjEgMTYuMiA5NC4zIDE2LjJDOTYuNSAxNi4yIDk4LjIgMTcuOSA5OC4yIDE5LjlDOTguMiAyMiA5Ni41IDIzLjcgOTQuMyAyMy43Wk05NC4zIDIyQzk1LjUgMjIgOTYuMyAyMS4xIDk2LjMgMTkuOUM5Ni4zIDE4LjcgOTUuNCAxNy44IDk0LjMgMTcuOEM5My4xIDE3LjggOTIuMyAxOC43IDkyLjMgMTkuOUM5Mi4zIDIxLjEgOTMuMSAyMiA5NC4zIDIyWiIgZmlsbD0iIzMzMyIvPgogIDxwYXRoIGQ9Ik0xMDUuNyAyMy41VjE5LjVDMTA1LjcgMTguNiAxMDUuMiAxOC4xIDEwNC41IDE4LjFDMTAzLjggMTguMSAxMDMuMyAxOC42IDEwMy4zIDE5LjVWMjMuNUgxMDEuNFYxNi41SDEwMy4zVjE3LjVDMTAzLjcgMTYuOSAxMDQuNCAxNi40IDEwNS4zIDE2LjRDMTA2LjggMTYuNCAxMDcuOCAxNy40IDEwNy44IDE5LjFWMjMuNUgxMDUuN1oiIGZpbGw9IiMzMzMiLz4KICA8cGF0aCBkPSJNMTE1LjcgMjMuNVYyMi43QzExNS4yIDIzLjMgMTE0LjUgMjMuNyAxMTMuNiAyMy43QzExMS44IDIzLjcgMTEwLjQgMjIuMiAxMTAuNCAxOS45QzExMC40IDE3LjcgMTExLjggMTYuMiAxMTMuNiAxNi4yQzExNC41IDE2LjIgMTE1LjIgMTYuNiAxMTUuNyAxNy4yVjE2LjVIMTE3LjZWMjMuNUgxMTUuN1pNMTE0LjEgMjJDMTE1LjIgMjIgMTE2LjEgMjEuMSAxMTYuMSAxOS45QzExNi4xIDE4LjcgMTE1LjIgMTcuOCAxMTQuMSAxNy44QzExMyAxNy44IDExMi4xIDE4LjcgMTEyLjEgMTkuOUMxMTIuMSAyMS4xIDExMyAyMiAxMTQuMSAyMloiIGZpbGw9IiMzMzMiLz4KICA8cGF0aCBkPSJNMTI1LjcgMjMuNVYxOS41QzEyNS43IDE4LjYgMTI1LjIgMTguMSAxMjQuNSAxOC4xQzEyMy44IDE4LjEgMTIzLjMgMTguNiAxMjMuMyAxOS41VjIzLjVIMTIxLjRWMTYuNUgxMjMuM1YxNy41QzEyMy43IDE2LjkgMTI0LjQgMTYuNCAxMjUuMyAxNi40QzEyNi44IDE2LjQgMTI3LjggMTcuNCAxMjcuOCAxOS4xVjIzLjVIMTI1Ljc6IiBmaWxsPSIjMzMzIi8+CiAgPHBhdGggZD0iTTEzNS43IDIzLjVWMTYuNUgxMzcuNlYyMy41SDEzNS43WiIgZmlsbD0iIzMzMyIvPgogIDxwYXRoIGQ9Ik0xNDAgMjMuNVYxNi41SDE0MS45VjIzLjVIMTQwWiIgZmlsbD0iIzMzMyIvPgo8L3N2Zz4=" alt="Skill Up Logo" class="logo">
+      </a>
+    </div>
+    <ul id="nav-links">
+      <li><a href="index.html" class="hover:text-purple-600 transition-colors">Home</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">About</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">How It Works</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">For Teachers</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">For Students</a></li>
+      <li><a href="#" class="hover:text-purple-600 transition-colors">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-element">About Skill Up</h1>
+        <p class="text-xl opacity-90 max-w-3xl mx-auto animate-element">We're on a mission to transform education by connecting local talent with eager learners, one skill at a time.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Our Story Section -->
+  <section class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 section-title animate-element">Our Story</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-element">How a simple idea to connect local teachers with students grew into a movement.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-element">
+          <div class="relative">
+            <div class="absolute -top-6 -left-6 w-64 h-64 bg-purple-200 rounded-lg transform -rotate-6"></div>
+            <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-yellow-200 rounded-lg transform rotate-6"></div>
+            <div class="relative bg-white p-8 rounded-lg shadow-xl z-10">
+              <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiM2RDI4RDkiLz4KPHJlY3QgeD0iMTUwIiB5PSIxNzAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjOEI1Q0Y2Ii8+CjxwYXRoIGQ9Ik0zMDAgMTUwTDM1MCAxNTBMMzI1IDIwMEwzMDAgMTUwWiIgZmlsbD0iI0ZDRDM0RCIvPgo8cGF0aCBkPSJNNTAgMTUwTDEwMCAxNTBMNzUgMjAwTDUwIDE1MFoiIGZpbGw9IiM0QURFODAiLz4KPC9zdmc+" alt="Skill Up Story" class="w-full h-auto rounded-lg">
+            </div>
+          </div>
+        </div>
+        
+        <div class="animate-element">
+          <h3 class="text-2xl font-bold mb-6">From Idea to Impact</h3>
+          <p class="text-lg text-gray-600 mb-6">Skill Up began in 2022 when our founder, Adebayo Ogunlesi, noticed a disconnect in his community: skilled professionals and artisans struggled to find students, while eager learners couldn't find quality teachers for practical skills.</p>
+          
+          <p class="text-lg text-gray-600 mb-6">What started as a simple WhatsApp group connecting math tutors with students in Lagos has evolved into a comprehensive platform addressing the educational needs of communities across Nigeria.</p>
+          
+          <p class="text-lg text-gray-600">Our approach is intentionally grassroots and human-centered. We believe that technology should enhance human connection, not replace it. That's why Skill Up focuses on facilitating real, in-person learning experiences whenever possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Journey Timeline -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 section-title animate-element">Our Journey</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-element">The key milestones that have shaped Skill Up's evolution.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Timeline item 1 -->
+        <div class="timeline-container left animate-element">
+          <div class="timeline-content">
+            <h3 class="text-xl font-bold mb-2">January 2022</h3>
+            <p class="text-gray-600">Idea conception: WhatsApp group connecting math tutors with JAMB students in Lagos.</p>
+          </div>
+        </div>
+
+        <!-- Timeline item 2 -->
+        <div class="timeline-container right animate-element">
+          <div class="timeline-content">
+            <h3 class="text-xl font-bold mb-2">April 2022</h3>
+            <p class="text-gray-600">Expanded to include language tutors and vocational skills like tailoring and cooking.</p>
+          </div>
+        </div>
+
+        <!-- Timeline item 3 -->
+        <div class="timeline-container left animate-element">
+          <div class="timeline-content">
+            <h3 class="text-xl font-bold mb-2">August 2022</h3>
+            <p class="text-gray-600">First prototype of Skill Up website launched with 50 registered teachers.</p>
+          </div>
+        </div>
+
+        <!-- Timeline item 4 -->
+        <div class="timeline-container right animate-element">
+          <div class="timeline-content">
+            <h3 class="text-xl font-bold mb-2">January 2023</h3>
+            <p class="text-gray-600">Reached 500 successful student-teacher matches across 5 cities in Nigeria.</p>
+          </div>
+        </div>
+
+        <!-- Timeline item 5 -->
+        <div class="timeline-container left animate-element">
+          <div class="timeline-content">
+            <h3 class="text-xl font-bold mb-2">June 2023</h3>
+            <p class="text-gray-600">Secured seed funding to improve platform and expand operations.</p>
+          </div>
+        </div>
+
+        <!-- Timeline item 6 -->
+        <div class="timeline-container right animate-element">
+          <div class="timeline-content">
+            <h3 class="text-xl font-bold mb-2">Today</h3>
+            <p class="text-gray-600">Growing community of teachers and learners with plans to expand across Africa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Mission & Vision -->
+  <section class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Mission -->
+        <div class="bg-white p-8 rounded-xl shadow-lg animate-element">
+          <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+            <i class="fas fa-bullseye text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+          <p class="text-lg text-gray-600 mb-6">To make quality education accessible, practical skills teachable, and local talent visible — starting from the grassroots.</p>
+          
+          <p class="text-lg text-gray-600">We're committed to creating opportunities for both learners seeking knowledge and skilled individuals looking to share their expertise while earning a sustainable income.</p>
+        </div>
+        
+        <!-- Vision -->
+        <div class="bg-white p-8 rounded-xl shadow-lg animate-element">
+          <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-6">
+            <i class="fas fa-eye text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+          <p class="text-lg text-gray-600 mb-6">A world where anyone can learn any skill from someone in their community, where teaching is valued as a profession, and where practical education is accessible to all.</p>
+          
+          <p class="text-lg text-gray-600">We envision Skill Up as the bridge connecting Africa's vast talent pool with those eager to learn, creating economic opportunities and fostering community development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 section-title animate-element">Our Values</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-element">The principles that guide everything we do at Skill Up.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Value 1 -->
+        <div class="value-card bg-white p-8 shadow-lg animate-element">
+          <div class="value-icon bg-purple-100 text-purple-600 mx-auto">
+            <i class="fas fa-handshake text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center">Community First</h3>
+          <p class="text-gray-600 text-center">We believe in the power of local communities and prioritize connections that strengthen neighborhoods and towns.</p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="value-card bg-white p-8 shadow-lg animate-element">
+          <div class="value-icon bg-blue-100 text-blue-600 mx-auto">
+            <i class="fas fa-universal-access text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center">Accessibility</h3>
+          <p class="text-gray-600 text-center">Education should be available to everyone, regardless of background, location, or economic status.</p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="value-card bg-white p-8 shadow-lg animate-element">
+          <div class="value-icon bg-green-100 text-green-600 mx-auto">
+            <i class="fas fa-seedling text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center">Growth Mindset</h3>
+          <p class="text-gray-600 text-center">We believe in continuous learning and improvement, both for our users and for ourselves as an organization.</p>
+        </div>
+
+        <!-- Value 4 -->
+        <div class="value-card bg-white p-8 shadow-lg animate-element">
+          <div class="value-icon bg-yellow-100 text-yellow-600 mx-auto">
+            <i class="fas fa-shield-alt text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center">Trust & Safety</h3>
+          <p class="text-gray-600 text-center">We prioritize creating a safe environment where learners and teachers can connect with confidence.</p>
+        </div>
+
+        <!-- Value 5 -->
+        <div class="value-card bg-white p-8 shadow-lg animate-element">
+          <div class="value-icon bg-red-100 text-red-600 mx-auto">
+            <i class="fas fa-heart text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center">Passion</h3>
+          <p class="text-gray-600 text-center">We're passionate about education and believe that teaching and learning should be joyful experiences.</p>
+        </div>
+
+        <!-- Value 6 -->
+        <div class="value-card bg-white p-8 shadow-lg animate-element">
+          <div class="value-icon bg-indigo-100 text-indigo-600 mx-auto">
+            <i class="fas fa-balance-scale text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center">Fairness</h3>
+          <p class="text-gray-600 text-center">We ensure fair compensation for teachers while keeping education affordable for learners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Team -->
+  <section class="py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 section-title animate-element">Meet Our Team</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-element">The passionate individuals working to make Skill Up's vision a reality.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Team Member 1 -->
+        <div class="team-card bg-white shadow-lg rounded-xl overflow-hidden animate-element">
+          <div class="relative">
+            <div class="h-64 bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center">
+              <div class="w-32 h-32 rounded-full bg-white flex items-center justify-center text-purple-600">
+                <img src="downloads1.jpg" alt="" style="border-radius: 50%;">
+              </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+              <h3 class="text-xl font-bold text-white">Francis Fortune</h3>
+              <p class="text-white/80">Founder & CEO</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">Former educator with a passion for making quality education accessible to all Nigerians.</p>
+            <div class="team-social flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card bg-white shadow-lg rounded-xl overflow-hidden animate-element">
+          <div class="relative">
+            <div class="h-64 bg-gradient-to-br from-blue-400 to-cyan-600 flex items-center justify-center">
+              <div class="w-32 h-32 rounded-full bg-white flex items-center justify-center text-blue-600">
+                <i class="fas fa-user text-5xl"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+              <h3 class="text-xl font-bold text-white">Ngozi Eze</h3>
+              <p class="text-white/80">Head of Operations</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">Experienced operations manager with a background in educational program development.</p>
+            <div class="team-social flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card bg-white shadow-lg rounded-xl overflow-hidden animate-element">
+          <div class="relative">
+            <div class="h-64 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+              <div class="w-32 h-32 rounded-full bg-white flex items-center justify-center text-green-600">
+                <i class="fas fa-user text-5xl"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+              <h3 class="text-xl font-bold text-white">Kwame Mensah</h3>
+              <p class="text-white/80">Tech Lead</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">Software engineer passionate about using technology to solve educational challenges in Africa.</p>
+            <div class="team-social flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card bg-white shadow-lg rounded-xl overflow-hidden animate-element">
+          <div class="relative">
+            <div class="h-64 bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center">
+              <div class="w-32 h-32 rounded-full bg-white flex items-center justify-center text-yellow-600">
+                <i class="fas fa-user text-5xl"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+              <h3 class="text-xl font-bold text-white">Fatima Ibrahim</h3>
+              <p class="text-white/80">Community Manager</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 mb-4">Former teacher who now helps onboard and support our growing community of educators.</p>
+            <div class="team-social flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-600 transition">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Our Mission -->
+  <section class="py-20 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6 animate-element">Join Our Mission</h2>
+      <p class="text-xl opacity-90 max-w-3xl mx-auto mb-8 animate-element">Be part of the movement to transform education in Africa. Whether you're a teacher, student, investor, or supporter, there's a place for you in the Skill Up community.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 animate-element">
+        <a href="#" class="bg-white text-purple-700 px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-purple-50 transition">
+          Become a Teacher
+        </a>
+        <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-700 transition">
+          Find a Teacher
+        </a>
+        <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-700 transition">
+          Partner With Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTUwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxwYXRoIGQ9Ik0yMC41IDEwQzE0LjcgMTAgMTAgMTQuNyAxMCAyMC41QzEwIDI2LjMgMTQuNyAzMSAyMC41IDMxQzI2LjMgMzEgMzEgMjYuMyAzMSAyMC41QzMxIDE0LjcgMjYuMyAxMCAyMC41IDEwWk0yMC41IDI4QzE2LjQgMjggMTMgMjQuNiAxMyAyMC41QzEzIDE2LjQgMTYuNCAxMyAyMC41IDEzQzI0LjYgMTMgMjggMTYuNCAyOCAyMC41QzI4IDI0LjYgMjQuNiAyOCAyMC41IDI4WiIgZmlsbD0id2hpdGUiLz4KICA8cGF0aCBkPSJNMjAuNSAxNkMxOC42IDE2IDE3IDE3LjYgMTcgMTkuNUMxNyAyMS40IDE4LjYgMjMgMjAuNSAyM0MyMi40IDIzIDI0IDIxLjQgMjQgMjAuNUMyNCAxOS42IDIzLjcgMTguOCAyMy4xIDE4LjFDMjIuNSAxNy40IDIxLjUgMTcgMjAuNSAxN1YxNloiIGZpbGw9IndoaXRlIi8+CiAgPHBhdGggZD0iTTQxLjIgMjMuNVYxNi41SDQzLjFWMjMuNUg0MS4yWiIgZmlsbD0id2hpdGUiLz4KICA8cGF0aCBkPSJNNDUuNyAyMy41VjE2LjVINDcuNlYxNy41QzQ4IDE2LjkgNDguNyAxNi40IDQ5LjYgMTYuNEM1MC41IDE2LjQgNTEuMiAxNi44IDUxLjYgMTcuNEM1Mi4xIDE2LjggNTIuOCAxNi40IDUzLjcgMTYuNEM1NS4yIDE2LjQgNTYuMiAxNy40IDU2LjIgMTkuMVYyMy41SDU0LjNWMTkuNUM1NC4zIDE4LjYgNTMuOCAxOC4xIDUzLjEgMTguMUM1Mi40IDE4LjEgNTEuOSAxOC42IDUxLjkgMTkuNVYyMy41SDUwVjE5LjVDNTAgMTguNiA0OS41IDE4LjEgNDguOCAxOC4xQzQ4LjEgMTguMSA0Ny42IDE4LjYgNDcuNiAxOS41VjIzLjVINDUuN1oiIGZpbGw9IndoaXRlIi8+CiAgPHBhdGggZD0iTTYzLjQgMjMuNUw2MC45IDIwLjVWNjMuNEg1OVYxNi41SDYwLjlMNjMuNCAxOS41TDY1LjkgMTYuNUg2Ny44VjIzLjVINjUuOUw2My40IDIwLjVWMjMuNVoiIGZpbGw9IndoaXRlIi8+CiAgPHBhdGggZD0iTTc0LjMgMjMuN0M3Mi4xIDIzLjcgNzAuNCAyMiA3MC40IDE5LjlDNzAuNCAxNy44IDcyLjEgMTYuMiA3NC4zIDE2LjJDNzYuNSAxNi4yIDc4LjIgMTcuOSA3OC4yIDE5LjlDNzguMiAyMiA3Ni41IDIzLjcgNzQuMyAyMy43Wk03NC4zIDIyQzc1LjUgMjIgNzYuMyAyMS4xIDc2LjMgMTkuOUM3Ni4zIDE4LjcgNzUuNCAxNy44IDc0LjMgMTcuOEM3My4xIDE3LjggNzIuMyAxOC43IDcyLjMgMTkuOUM3Mi4zIDIxLjEgNzMuMSAyMiA3NC4zIDIyWiIgZmlsbD0id2hpdGUiLz4KICA8cGF0aCBkPSJNODUuMyAyMy41TDgzLjYgMjEuM0w4MS45IDIzLjVIODQuOEw3OS44IDE2LjVIODEuN0w4My40IDE4LjdMODUuMSAxNi41SDgyLjJMODcuMiAyMy41SDg1LjNaIiBmaWxsPSJ3aGl0ZSIvPgogIDxwYXRoIGQ9Ik05NC4zIDIzLjdDOTIuMSAyMy43IDkwLjQgMjIgOTAuNCAxOS45QzkwLjQgMTcuOCA5Mi4xIDE2LjIgOTQuMyAxNi4yQzk2LjUgMTYuMiA5OC4yIDE3LjkgOTguMiAxOS45Qzk4LjIgMjIgOTYuNSAyMy43IDk0LjMgMjMuN1pNOTQuMyAyMkM5NS41IDIyIDk2LjMgMjEuMSA5Ni4zIDE5LjlDOTYuMyAxOC43IDk1LjQgMTcuOCA5NC4zIDE3LjhDOTMuMSAxNy44IDkyLjMgMTguNyA5Mi4zIDE5LjlDOTIuMyAyMS4xIDkzLjEgMjIgOTQuMyAyMloiIGZpbGw9IndoaXRlIi8+CiAgPHBhdGggZD0iTTEwNS43IDIzLjVWMTkuNUMxMDUuNyAxOC42IDEwNS4yIDE4LjEgMTA0LjUgMTguMUMxMDMuOCAxOC4xIDEwMy4zIDE4LjYgMTAzLjMgMTkuNVYyMy41SDEwMS40VjE2LjVIMTAzLjNWMTcuNUMxMDMuNyAxNi45IDEwNC40IDE2LjQgMTA1LjMgMTYuNEMxMDYuOCAxNi40IDEwNy44IDE3LjQgMTA3LjggMTkuMVYyMy41SDEwNS43WiIgZmlsbD0id2hpdGUiLz4KICA8cGF0aCBkPSJNMTE1LjcgMjMuNVYyMi43QzExNS4yIDIzLjMgMTE0LjUgMjMuNyAxMTMuNiAyMy43QzExMS44IDIzLjcgMTEwLjQgMjIuMiAxMTAuNCAxOS45QzExMC40IDE3LjcgMTExLjggMTYuMiAxMTMuNiAxNi4yQzExNC41IDE2LjIgMTE1LjIgMTYuNiAxMTUuNyAxNy4yVjE2LjVIMTE3LjZWMjMuNUgxMTUuN1pNMTE0LjEgMjJDMTE1LjIgMjIgMTE2LjEgMjEuMSAxMTYuMSAxOS45QzExNi4xIDE4LjcgMTE1LjIgMTcuOCAxMTQuMSAxNy44QzExMyAxNy44IDExMi4xIDE4LjcgMTEyLjEgMTkuOUMxMTIuMSAyMS4xIDExMyAyMiAxMTQuMSAyMloiIGZpbGw9IndoaXRlIi8+CiAgPHBhdGggZD0iTTEyNS43IDIzLjVWMTkuNUMxMjUuNyAxOC42IDEyNS4yIDE4LjEgMTI0LjUgMTguMUMxMjMuOCAxOC4xIDEyMy4zIDE4LjYgMTIzLjMgMTkuNVYyMy41SDEyMS40VjE2LjVIMTIzLjNWMTcuNUMxMjMuNyAxNi45IDEyNC40IDE2LjQgMTI1LjMgMTYuNEMxMjYuOCAxNi40IDEyNy44IDE3LjQgMTI3LjggMTkuMVYyMy41SDEyNS43WiIgZmlsbD0id2hpdGUiLz4KICA8cGF0aCBkPSJNMTM1LjcgMjMuNVYxNi41SDEzNy42VjIzLjVIMTM1LjdaIiBmaWxsPSJ3aGl0ZSIvPgogIDxwYXRoIGQ9Ik0xNDAgMjMuNVYxNi41SDE0MS45VjIzLjVIMTQwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+" alt="Skill Up Logo" class="mb-4">
+          <p class="text-gray-400 mb-4">Empowering Local Learning. One Teacher, One Student, One Skill at a Time.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition social-icon">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white footer-link">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">About</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">How It Works</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Features</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">For Teachers</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Register as Teacher</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Teacher Guidelines</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Success Stories</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Payment Info</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Support</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">For Students</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Find a Teacher</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Book a Session</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Student Resources</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">FAQs</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white footer-link">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2023 Skill Up. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    function initMobileNav() {
+      const toggle = document.getElementById('toggle');
+      const closeMenu = document.getElementById('close-menu');
+      const mobileNav = document.getElementById('mobile-nav');
+      const mobileNavLinks = document.querySelectorAll('#mobile-nav a');
+      
+      toggle.addEventListener('click', () => {
+        mobileNav.classList.add('active');
+      });
+      
+      closeMenu.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+      });
+      
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('active');
+        });
+      });
+    }
+
+    // Animation on scroll
+    function handleIntersection(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+
+    function initAnimations() {
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      });
+
+      const elements = document.querySelectorAll('.animate-element');
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      initMobileNav();
+      initAnimations();
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'965ed0cc44de9db6',t:'MTc1MzY0NzM5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>

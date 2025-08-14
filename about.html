@@ -10,267 +10,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      height: 40px;
-    }
-
-    #nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    #nav-links li a {
-      color: #333;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-      margin-right: 35px;
-      font-size: 1.1rem;
-    }
-
-    #nav-links li a:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #6d28d9;
-      transition: width 0.3s ease;
-    }
-
-    #nav-links li a:hover:after {
-      width: 100%;
-    }
-
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-    }
-
-    .page-header {
-      position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-              background: url(images/test3.jpeg);
-     background-size: cover;
-            background-attachment: fixed;
-       background-position: center;
-    }
-
-    .page-header:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('images/data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSIxMDAiPgo8cGF0aCBkPSJNMjggNjZMMCA1MEwwIDE2TDI4IDBMNTYgMTZMNTYgNTBMMjggNjZMMjggMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjIiPjwvcGF0aD4KPHBhdGggZD0iTTI4IDBMMjggMzRMNTYgNTBMNTYgMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIyIj48L3BhdGg+Cjwvc3ZnPg==');
-      opacity: 0.1;
-    }
-
-    .section-title {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2rem;
-    }
-
-    .section-title:after {
-      content: '';
-      position: absolute;
-      width: 60%;
-      height: 4px;
-      bottom: -10px;
-      left: 20%;
-      background: #6d28d9;
-      border-radius: 2px;
-    }
-
-    .team-card {
-      transition: all 0.3s ease;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .team-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .team-social {
-      transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .team-card:hover .team-social {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .value-card {
-      transition: all 0.3s ease;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .value-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .value-icon {
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin-bottom: 1.5rem;
-    }
-
-    .mobile-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.98);
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transform: translateY(-100%);
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    }
-
-    .mobile-nav.active {
-      transform: translateY(0);
-    }
-
-    .mobile-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-    }
-
-    .mobile-nav li {
-      margin: 1.5rem 0;
-    }
-
-    .mobile-nav a {
-      font-size: 1.5rem;
-      color: #333;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .mobile-nav a:hover {
-      color: #6d28d9;
-    }
-
-    .close-menu {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .footer-link {
-      transition: all 0.3s ease;
-    }
-
-    .footer-link:hover {
-      color: #6d28d9;
-      transform: translateX(5px);
-    }
-
-    .social-icon {
-      transition: all 0.3s ease;
-    }
-
-    .social-icon:hover {
-      transform: translateY(-5px);
-      color: #6d28d9;
-    }
-
-    @media (max-width: 768px) {
-      #nav-links {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-
-    }
-
-    .animate-element {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .animate-element.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-     html {
-      scroll-behavior: smooth;
-    }
-
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #6b46c1;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #553c9a;
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/about.css">
 </head>
 
 <body class="bg-white text-gray-800 font-sans">
@@ -283,7 +23,7 @@
     <li><a href="#" class="hover:text-purple-600 transition-colors">Home</a></li>
             <li><a href="student/student-registration-form.html" class="hover:text-purple-600 transition-colors">Learners</a></li>
             <li><a href="teachers/teachers-registration-form.html" class="hover:text-purple-600 transition-colors">Teachers</a></li>
-           <li><a href="ABOUT.html" class="hover:text-purple-600 transition-colors">Guide</a></li>
+           <li><a href="about.html" class="hover:text-purple-600 transition-colors">Guide</a></li>
             <li><a href="contact.html" class="hover:text-purple-600 transition-colors">Contact</a></li>
     </ul>
   </div>
@@ -292,7 +32,7 @@
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/logo.png" alt="Acadence Logo" class="logo">
+        <img src="images/logo.webp" alt="Acadence Logo" class="logo">
       </a>
     </div>
     <ul id="nav-links" style="margin-right: 25%;">
@@ -308,7 +48,12 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="page-header">
+  <header class="page-header" style="
+       background: url(images/test3.webp);
+     background-size: cover;
+            background-attachment: fixed;
+       background-position: center;
+  ">
     <div class="container mx-auto px-6 relative z-10">
       <div class="max-w-4xl mx-auto text-center" style="color: white;">
         <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-element">About Acadence</h1>
@@ -331,7 +76,7 @@
             <div class="absolute -top-6 -left-6 w-64 h-64 bg-purple-200 rounded-lg transform -rotate-6"></div>
             <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-yellow-200 rounded-lg transform rotate-6"></div>
             <div class="relative bg-white p-8 rounded-lg shadow-xl z-10">
-              <img src="images/logo.png" alt="Acadence Story" class="w-full h-auto rounded-lg">
+              <img src="images/logo.webp" alt="Acadence Story" class="w-full h-auto rounded-lg">
             </div>
           </div>
         </div>
@@ -595,7 +340,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <img src="images/logo.png" alt="Acadence Logo" class="mb-4">
+          <img src="images/logo.webp" alt="Acadence Logo" class="mb-4">
           <p class="text-gray-400 mb-4">Empowering Local Learning. One Teacher, One Student, One Skill at a Time.</p>
           <div class="flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-white transition social-icon">
